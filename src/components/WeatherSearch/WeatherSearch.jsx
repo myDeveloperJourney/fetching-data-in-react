@@ -5,8 +5,7 @@ const WeatherSearch = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // TODO: call the service "show" function here
+        props.fetchData(city);
         // clear form input
         setCity('');
     };
@@ -14,7 +13,7 @@ const WeatherSearch = (props) => {
     return (
         <section>
             <h2>Search</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="city">Enter a city:</label>
                 <input 
                     id="city"
